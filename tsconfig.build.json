@@ -8,7 +8,7 @@
     "moduleResolution": "Node",
     "allowSyntheticDefaultImports": true
   },
-  "include": ["components/"],
+  "include": ["src/"],
   "exclude": [
     "components/**/__tests__",
     "components/**/demos",
