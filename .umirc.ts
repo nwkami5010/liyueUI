@@ -14,12 +14,9 @@ export default defineConfig({
   // Because of using GitHub Pages
   base: `/${repo}/`,
   publicPath: `/${repo}/`,
-  navs: [
-    null,
-    {
-      title: 'GitHub',
-      path: 'https://github.com/umijs/dumi-template',
-    },
-  ],
+  sass: {},
+  history: {
+    type: 'hash',
+  },
   // more config: https://d.umijs.org/config
 });
