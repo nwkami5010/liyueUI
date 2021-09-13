@@ -1,0 +1,158 @@
+@import 'mixins';
+
+.l-btn {
+  position: relative;
+  display: inline-block;
+  font-weight: $btn-font-weight;
+  line-height: $btn-line-height;
+  color: $body-color;
+  white-space: nowrap;
+  text-align: center;
+  vertical-align: middle;
+  background-image: none;
+  border: $btn-border-width solid transparent;
+  @include button-size(
+    $btn-padding-y,
+    $btn-padding-x,
+    $btn-font-size,
+    $border-radius
+  );
+  box-shadow: $btn-box-shadow;
+  cursor: pointer;
+  transition: $btn-transition;
+  &.disabled,
+  &[disabled] {
+    cursor: not-allowed;
+    opacity: $btn-disabled-opacity;
+    box-shadow: none;
+    > * {
+      pointer-events: none;
+    }
+  }
+}
+// type
+.l-btn-default {
+  @include button-style(
+    $white,
+    $gray-400,
+    $body-color,
+    $white,
+    $primary,
+    $primary
+  );
+}
+
+.l-btn-primary {
+  @include button-style($primary, $primary, $white);
+}
+
+.l-btn-info {
+  @include button-style($info, $info, $white);
+}
+
+.l-btn-warning {
+  @include button-style($warning, $warning, $white);
+}
+
+.l-btn-danger {
+  @include button-style($danger, $danger, $white);
+}
+
+.l-btn-text {
+  @include button-style(transparent, transparent, $body-color);
+  box-shadow: none;
+}
+
+.l-btn-dashed {
+  @include button-style(
+    $white,
+    $gray-400,
+    $body-color,
+    $white,
+    $primary,
+    $primary
+  );
+  border-style: dotted;
+}
+
+.l-btn-link {
+  font-weight: $font-weight-normal;
+  color: $btn-link-color;
+  text-decoration: $link-decoration;
+  box-shadow: none;
+  background-color: transparent;
+  &:hover {
+    color: $btn-link-hover-color;
+    text-decoration: $link-hover-decoration;
+  }
+  &:focus,
+  &.focus {
+    text-decoration: $link-hover-decoration;
+    box-shadow: none;
+  }
+  &:disabled,
+  &.disabled {
+    color: $btn-link-disabled-color;
+    pointer-events: none;
+  }
+}
+
+// size
+.l-btn-lg {
+  @include button-size(
+    $btn-padding-y-lg,
+    $btn-padding-x-lg,
+    $btn-font-size-lg,
+    $btn-border-radius-lg
+  );
+}
+
+.l-btn-md {
+  @include button-size(
+    $btn-padding-y-md,
+    $btn-padding-x-md,
+    $btn-font-size-md,
+    $btn-border-radius-md
+  );
+}
+
+.l-btn-sm {
+  @include button-size(
+    $btn-padding-y-sm,
+    $btn-padding-x-sm,
+    $btn-font-size-sm,
+    $btn-border-radius-sm
+  );
+}
+
+// shape
+.l-btn-circle {
+  min-width: 32px;
+  padding-right: 0;
+  padding-left: 0;
+  text-align: center;
+  border-radius: 50%;
+}
+
+.l-btn-round {
+  border-radius: 30%;
+}
+
+// block
+.l-btn-block {
+  width: 100%;
+}
+
+// icon
+// .l-btn-icon-only {
+//   width: 32px;
+//   height: 32px;
+//   padding: 2.4px 0;
+//   font-size: 16px;
+//   border-radius: 2px;
+// }
+
+// .l-btn > .anticon + span,
+// .l-btn > span + .anticon {
+//   margin-left: 8px;
+// }
